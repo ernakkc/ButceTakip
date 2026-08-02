@@ -27,7 +27,6 @@ struct ContentView: View {
                     Spacer()
                 }
                 .padding(20)
-                // Navigation ayarlarını içteki ana görünüme (VStack) bağlıyoruz
                 .navigationTitle("Bütçe Takip")
                 .toolbar {
                     ToolbarItem(placement: .primaryAction) {

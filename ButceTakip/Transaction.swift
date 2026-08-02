@@ -10,6 +10,7 @@ import SwiftData
 
 @Model
 class Transaction {
+    var uuid: UUID
     var title: String
     var amount: Double
     var currency: CurrencyType
@@ -19,7 +20,8 @@ class Transaction {
     var category: CategoryType
     var transactionType: TransactionType
     
-    init(title: String, amount: Double, currency: CurrencyType, note: String, date: Date, time: Date, category: CategoryType, transactionType: TransactionType) {
+    init(uuid: UUID, title: String, amount: Double, currency: CurrencyType, note: String, date: Date, time: Date, category: CategoryType, transactionType: TransactionType) {
+        self.uuid = uuid
         self.title = title
         self.amount = amount
         self.currency = currency

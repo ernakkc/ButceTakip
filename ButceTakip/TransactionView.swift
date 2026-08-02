@@ -36,7 +36,7 @@ struct TransactionView: View {
 }
 
 #Preview {
-    var transaction: Transaction = Transaction(title: "Salatalık", amount: 250, currency: .TL, note: "Aldim götüme sokacam", date: .now, time: .now, category: .FOOD, transactionType: .EXPENSE)
+    var transaction: Transaction = Transaction(uuid: UUID(), title: "Salatalık", amount: 250, currency: .TL, note: "Aldim götüme sokacam", date: .now, time: .now, category: .FOOD, transactionType: .EXPENSE)
     TransactionView(transaction: transaction).padding(20)
 }
     

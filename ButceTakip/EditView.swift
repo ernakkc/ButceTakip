@@ -10,6 +10,8 @@ import SwiftData
 
 struct EditView: View {
     @Environment(\.modelContext) private var modelContext
+    @Query(sort: \Transaction.date, order: .reverse) private var transactions: [Transaction]
+    
     @Binding var isPresented: Bool
     @State private var showValidationAlert: Bool = false
     
@@ -29,7 +31,7 @@ struct EditView: View {
             VStack(spacing: 0) {
                 // Form Başlığı ve Kapatma Butonu
                 HStack {
-                    Text("İşlem Ekle")
+                    Text("İşlem Düzenle")
                         .font(.title2)
                     Spacer()
                     Button("Kapat") {
@@ -89,7 +91,7 @@ struct EditView: View {
                     }
                     self.isPresented = false
                     
-                    let new = Transaction(title: title, amount: amount, currency: currency, note: note, date: date, time: time, category: category, transactionType: transactionType)
+                    let new = Transaction(uuid: UUID(), title: title, amount: amount, currency: currency, note: note, date: date, time: time, category: category, transactionType: transactionType)
                     modelContext.insert(new)
                     
                 })
