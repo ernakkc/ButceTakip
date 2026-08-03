@@ -11,18 +11,13 @@ import SwiftData
 struct TransactionView: View {
 
     @State private var showPopup = false
-
     @Bindable var transaction: Transaction
 
     var body: some View {
         VStack(spacing: 6) {
-
             HStack {
-                Text(transaction.title)
-                    .fontWeight(.medium)
-
+                Text(transaction.title).fontWeight(.medium)
                 Spacer()
-
                 amountText
             }
 
@@ -31,10 +26,8 @@ struct TransactionView: View {
                     .font(.caption2)
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
-
                 Spacer()
             }
-
             Divider()
         }
         .contentShape(Rectangle())
@@ -52,13 +45,7 @@ struct TransactionView: View {
     private var amountText: some View {
         HStack(spacing: 3) {
             Text(transaction.transactionType == .EXPENSE ? "-" : "+")
-
-            Text(
-                transaction.amount.formatted(
-                    .number.precision(.fractionLength(2))
-                )
-            )
-
+            Text(transaction.amount.formatted(.number.precision(.fractionLength(2))))
             Text(transaction.currency.rawValue)
         }
         .fontWeight(.bold)

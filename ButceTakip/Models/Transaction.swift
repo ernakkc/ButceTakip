@@ -33,29 +33,6 @@ class Transaction {
 }
 
 
-enum CurrencyType: String, Codable, CaseIterable, Identifiable{
-    case TL
-    case USD
-    case EURO
-    
-    var id: Self { self }
-}
 
-enum CategoryType: String, Codable, CaseIterable, Identifiable{
-    case FOOD
-    case HOUSE
-    case TRANSPORT
-    case BANK
-    case OTHER
-    
-    var id: Self { self }
-}
-
-enum TransactionType: String, Codable, CaseIterable, Identifiable{
-    case INCOME
-    case EXPENSE
-    
-    var id: Self { self }
-}
 
 
