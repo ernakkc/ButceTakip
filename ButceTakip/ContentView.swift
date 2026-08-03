@@ -21,7 +21,7 @@ struct ContentView: View {
                     
                     ScrollView {
                         ForEach(transactions, id: \.self) { transaction in
-                            TransactionView(transaction: transaction)
+                            TransactionView(transaction: transaction) 
                         }
                     }
                     Spacer()
