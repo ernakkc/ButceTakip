@@ -106,7 +106,7 @@ struct EditView: View {
     }
 
     // MARK: - İşlem Türü
-
+    
     private var transactionTypePicker: some View {
         Picker("İşlem Türü", selection: $transactionType) {
             Text("HARCAMA")

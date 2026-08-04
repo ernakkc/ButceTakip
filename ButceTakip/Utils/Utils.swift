@@ -25,11 +25,3 @@ func totalExpenses(transactions: [Transaction]) -> Double {
     }
     return sum
 }
-
-var amountFormatter: NumberFormatter {
-    let f = NumberFormatter()
-    f.numberStyle = .decimal
-    f.maximumFractionDigits = 2
-    f.minimumFractionDigits = 0
-    return f
-}
